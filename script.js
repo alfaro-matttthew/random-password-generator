@@ -1,5 +1,5 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
 
 const lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 const upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -7,98 +7,141 @@ const numberChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 const specialChar = ["!", "#", "$", "%", "&","*", "?", "@", "^"];
 var passwordPool = []
 
+// let passLength = prompt('How many characters does your password need to have?', 'Must be between 8 and 128 characters long');
+// let passLowerCase = confirm("Do you want to use lower case letters in your password?");
+// let passUpperCase = confirm("Do you want to use UPPER CASE in your password?");
+// let passNumber = confirm("Do you want to use numbers in your password?");
+// let passSpecialChar = confirm("Do you want to use special characters in your password?");
+
+
+//--------WORKSPACE WORKSPACE WORKSPACE----------------------------------------------------------//
+
 let passLength = prompt('How many characters does your password need to have?', 'Must be between 8 and 128 characters long');
-let passLowerCase = confirm("Do you want to use lower case letters in your password?");
-let passUpperCase = confirm("Do you want to use UPPER CASE in your password?");
-let passNumber = confirm("Do you want to use numbers in your password?");
-let passSpecialChar = confirm("Do you want to use special characters in your password?");
 
-       function lengthPrompt() {
-          if (passLength > 8 && passLength < 128) {
-            lengthValue = true;
-          }
-          else {
-            alert("Password Length Must Be Between 8 And 128 Characters Long!")
-          }
+
+        if (passLength > 8 && passLength < 128) {
+          lengthValue = true;
+        }
+        else {
+          alert("Password Length Must Be Between 8 And 128 Characters Long!")
+        } ;
+
+        if (lengthValue === true) {
+          setLength();
         }
 
-//--------Lower Case Function--------------------------------------------------------------------//
-
-
-        function chooseLowerCase() {
-          if (passLowerCase === true) {
-            passwordPool.push(lowerCase);
-            console.log(passwordPool);
-          }
-          else {
+        function setLength() {
+          for (let step = 0; step < passLength; step++)
+            console.log(Math.floor(Math.random()*128)+8)
             
-          }
         }
+
+
+//--------WORKSPACE WORKSPACE WORKSPACE----------------------------------------------------------//
+
+// //--------Length Prompt Function-----------------------------------------------------------------//
+
+
+//        function lengthPrompt() {
+//           if (passLength > 8 && passLength < 128) {
+//             lengthValue = true;
+//           }
+//           else {
+//             alert("Password Length Must Be Between 8 And 128 Characters Long!")
+//           }
+//         }
+
+//         lengthPrompt();
+//         console.log(lengthValue);
+
+// //--------Length Prompt Function-----------------------------------------------------------------//        
+
+// //--------Lower Case Function--------------------------------------------------------------------//
+
+
+//         function chooseLowerCase() {
+//           if (passLowerCase === true) {
+//             passwordPool.push(lowerCase);
+//             console.log(passwordPool);
+//           }
+//           else {
+            
+//           }
+//         }
         
-        chooseLowerCase();
+//         chooseLowerCase();
 
-//--------Lower Case Function--------------------------------------------------------------------//
+// //--------Lower Case Function--------------------------------------------------------------------//
 
-//--------Upper Case Function--------------------------------------------------------------------//
+// //--------Upper Case Function--------------------------------------------------------------------//
 
 
-        function chooseUpperCase() {
-          if (passUpperCase === true) {
-            passwordPool.push(upperCase);
-            console.log(passwordPool);
-          }
-          else {
+//         function chooseUpperCase() {
+//           if (passUpperCase === true) {
+//             passwordPool.push(upperCase);
+//             console.log(passwordPool);
+//           }
+//           else {
             
-          }
-        }
+//           }
+//         }
         
-        chooseUpperCase();
+//         chooseUpperCase();
 
-//--------Upper Case Function--------------------------------------------------------------------//
+// //--------Upper Case Function--------------------------------------------------------------------//
 
-//--------Number Function------------------------------------------------------------------------//
+// //--------Number Function------------------------------------------------------------------------//
 
 
-        function chooseNumber() {
-          if (passNumber === true) {
-            passwordPool.push(numberChar);
-            console.log(passwordPool);
-          }
-          else {
+//         function chooseNumber() {
+//           if (passNumber === true) {
+//             passwordPool.push(numberChar);
+//             console.log(passwordPool);
+//           }
+//           else {
             
-          }
-        }
+//           }
+//         }
 
-        chooseNumber();
+//         chooseNumber();
 
-//--------Number Function------------------------------------------------------------------------//
+// //--------Number Function------------------------------------------------------------------------//
 
-//--------Special Character Function------------------------------------------------------------//
+// //--------Special Character Function------------------------------------------------------------//
 
 
-        function chooseSpecial() {
-          if (passSpecialChar === true) {
-            passwordPool.push(specialChar);
-            console.log(passwordPool);
-          }
-          else {
+//         function chooseSpecial() {
+//           if (passSpecialChar === true) {
+//             passwordPool.push(specialChar);
+//             console.log(passwordPool);
+//           }
+//           else {
             
-          }
-        }
+//           }
+//         }
 
-        chooseSpecial();
+//         chooseSpecial();
 
-//--------Special Character Function------------------------------------------------------------//
+// //--------Special Character Function------------------------------------------------------------//
 
-        function lowerCaseConfirm() {
+//         function lowerCaseConfirm() {
 
-        }
+//         }
 
-        function buildPassword() {
-          if (lengthValue = true) {
-            passwordPool.push()
-          }
-        }
+//         function buildPassword() {
+//           if (lengthValue = true) {
+//             passwordPool.push()
+//           }
+//         }
+
+// //--------Special Character Function------------------------------------------------------------//
+
+// //--------Random Number Method-----------------------------------------------------------------//
+
+//         Math.floor(Math.random() * 128) + 8;
+
+// //--------Random Number Method-----------------------------------------------------------------//
+
 
 // let isBoss = confirm("Are you the boss?");
 // alert(isBoss);
