@@ -22,8 +22,82 @@ let passSpecialChar = confirm("Do you want to use special characters in your pas
           }
         }
 
-        function buildPassword() {
+//--------Lower Case Function--------------------------------------------------------------------//
 
+
+        function chooseLowerCase() {
+          if (passLowerCase === true) {
+            passwordPool.push(lowerCase);
+            console.log(passwordPool);
+          }
+          else {
+            
+          }
+        }
+        
+        chooseLowerCase();
+
+//--------Lower Case Function--------------------------------------------------------------------//
+
+//--------Upper Case Function--------------------------------------------------------------------//
+
+
+        function chooseUpperCase() {
+          if (passUpperCase === true) {
+            passwordPool.push(upperCase);
+            console.log(passwordPool);
+          }
+          else {
+            
+          }
+        }
+        
+        chooseUpperCase();
+
+//--------Upper Case Function--------------------------------------------------------------------//
+
+//--------Number Function------------------------------------------------------------------------//
+
+
+        function chooseNumber() {
+          if (passNumber === true) {
+            passwordPool.push(numberChar);
+            console.log(passwordPool);
+          }
+          else {
+            
+          }
+        }
+
+        chooseNumber();
+
+//--------Number Function------------------------------------------------------------------------//
+
+//--------Special Character Function------------------------------------------------------------//
+
+
+        function chooseSpecial() {
+          if (passSpecialChar === true) {
+            passwordPool.push(specialChar);
+            console.log(passwordPool);
+          }
+          else {
+            
+          }
+        }
+
+        chooseSpecial();
+
+//--------Special Character Function------------------------------------------------------------//
+
+        function lowerCaseConfirm() {
+
+        }
+
+        function buildPassword() {
+          if (lengthValue = true) {
+            passwordPool.push()
+          }
         }
 
 // let isBoss = confirm("Are you the boss?");
