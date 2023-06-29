@@ -5,6 +5,7 @@ const lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', '
 const upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 const numberChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 const specialChar = ["!", "#", "$", "%", "&","*", "?", "@", "^"];
+var indexPool = []
 var passwordPool = []
 
 // let passLength = prompt('How many characters does your password need to have?', 'Must be between 8 and 128 characters long');
@@ -18,7 +19,7 @@ var passwordPool = []
 
 let passLength = prompt('How many characters does your password need to have?', 'Must be between 8 and 128 characters long');
 
-
+        //This if else function determines if the length is correct//
         if (passLength > 8 && passLength < 128) {
           lengthValue = true;
         }
@@ -26,15 +27,19 @@ let passLength = prompt('How many characters does your password need to have?', 
           alert("Password Length Must Be Between 8 And 128 Characters Long!")
         } ;
 
+        //If the lenght is correct, then it invokes the setLength function//
         if (lengthValue === true) {
           setLength();
         }
 
+        //The setLength function generates random numbers equal to that which the user typed into the prompt//
+        //These numbers will be used to select random strings from the passwordPool array//
         function setLength() {
           for (let step = 0; step < passLength; step++)
-            console.log(Math.floor(Math.random()*128)+8)
-            
+            indexPool.push(Math.floor(Math.random()*128)+8);
         }
+
+        console.log(indexPool);
 
 
 //--------WORKSPACE WORKSPACE WORKSPACE----------------------------------------------------------//
