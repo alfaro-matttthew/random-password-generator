@@ -20,4 +20,4 @@ https://github.com/alfaro-matttthew/random-password-generator
 
 Desktop
 
-![Random Password Generator in Action](./screenshot.gif)
+![Random Password Generator in Action](./the-screenshot.gif)
