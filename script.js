@@ -133,13 +133,6 @@ buildPass();
 }
 
 generateBtn.addEventListener('click', function buttonPress() {
-  
-  // passwordArray.splice(0,passwordArray.length);
-  // console.log(passwordArray);
-
-  // finalPassword.splice(0,finalPassword.length);
-  // console.log(finalPassword);
-
   developPassword();
 })
 
