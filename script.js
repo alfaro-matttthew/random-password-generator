@@ -1,15 +1,19 @@
 // Assignment Code
 
+var generateBtn = document.querySelector("#generate");
+
+function developPassword() {
 var lowerCaseLi = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var upperCaseLi = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var numberCharLi = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialCharLi = ['!', '#', '$', '%', '&', '*', '?', '@', '^'];
 
-var generateBtn = document.querySelector("#generate");
-var passwordArray = [];
+
+var textBox = document.querySelector("#password");
 let passwordObj = {};
-var finalPassword = [];
+var passwordArray = [];
 var draftPassword = [];
+var finalPassword = [];
 
 var noUpper = [];
 var noLower = [];
@@ -19,9 +23,16 @@ var noSpecial = [];
 
 function buildPass() {
 
-  passLength = prompt("How many characters would you like in the password?");
+  // textBox.value = '';
+  // finalPassword = [];
 
-   if (passLength < 8 || passLength > 128) {
+  passLength = prompt("How many characters would you like in the password?");
+console.log(passLength);
+    if (passLength == null) {
+      
+      return;
+    }
+    if (passLength < 8 || passLength > 128) {
     alert("Password Length Must Be Between 8 And 128 Characters Long!");
     buildPass();
     }
@@ -39,7 +50,7 @@ function buildArray() {
   if (passwordObj.upperCase == true) {
     passwordArray = passwordArray.concat(upperCaseLi);
   }
-  if (passwordObj.lowerCaseCase == true) {
+  if (passwordObj.lowerCase == true) {
     passwordArray = passwordArray.concat(lowerCaseLi);
   }
   if (passwordObj.numbersChar == true) {
@@ -55,8 +66,8 @@ function buildArray() {
 function chooseChar() {
   for (let step = 0; step < passLength; step++) {
   draftPassword.push(passwordArray[Math.floor(Math.random() * passwordArray.length)]);
-  
   }
+  console.log(draftPassword);
   checkErrors();
 }
 
@@ -70,6 +81,8 @@ function checkErrors() {
     }
     }
   }
+  console.log(noUpper);
+
   if (passwordObj.lowerCase == true) {
     noLower = true;
     for (let i = 0; i < lowerCaseLi.length; i++) {
@@ -78,6 +91,8 @@ function checkErrors() {
     }
     }
   }
+  console.log(noLower);
+
   if (passwordObj.numbersChar == true) {
     noNumber = true;
     for (let i = 0; i < numberCharLi.length; i++) {
@@ -86,6 +101,8 @@ function checkErrors() {
     }
     }
   }
+  console.log(noNumber);
+
   if (passwordObj.specialChar == true) {
     noSpecial = true;
     for (let i = 0; i < specialCharLi.length; i++) {
@@ -93,23 +110,37 @@ function checkErrors() {
       noSpecial = false;
     }
     }
-  // }
-  // if (noUpper || noLower || noNumber || noSpecial) {
-  //   draftPassword = [];
-  //   chooseChar();
-  // }
-  // else {
+  }
+  console.log(noSpecial);
+
+  if (noUpper && noLower && noNumber && noSpecial) {
+    draftPassword = [];
+    chooseChar();
+  }
+  else {
   renderPassword();
   }
 }
 
 function renderPassword() {
+  
+
   var finalPassword = draftPassword.join("");
   document.getElementById("password").value = finalPassword;
+  console.log(finalPassword);
+}
+buildPass();
 }
 
 generateBtn.addEventListener('click', function buttonPress() {
-  buildPass();
+  
+  // passwordArray.splice(0,passwordArray.length);
+  // console.log(passwordArray);
+
+  // finalPassword.splice(0,finalPassword.length);
+  // console.log(finalPassword);
+
+  developPassword();
 })
 
 
